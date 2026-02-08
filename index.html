@@ -16,6 +16,7 @@
   --texto:#6b5f52;
 }
 
+/* Reset */
 *{
   box-sizing:border-box;
   margin:0;
@@ -226,16 +227,15 @@ p{
   </div>
 </section>
 
-<!-- MÚSICA: SE ESCUCHA AL TOCAR CUALQUIER PARTE -->
-<iframe id="music" src="" allow="autoplay" style="display:none;"></iframe>
+<!-- MÚSICA (SE ACTIVA AL TOCAR CUALQUIER PARTE) -->
+<audio id="bg-music" preload="auto">
+  <source src="musica.mp3" type="audio/mpeg">
+</audio>
 
 <script>
 document.addEventListener("click", function(){
-  const music = document.getElementById("music");
-  if(music.src === ""){
-    music.src =
-    "https://www.youtube.com/embed/vfqnbC8m--w?autoplay=1&loop=1&playlist=vfqnbC8m--w";
-  }
+  const audio = document.getElementById("bg-music");
+  audio.play();
 },{ once:true });
 </script>
 
