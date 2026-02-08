@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Bautizo de Jhon Oliver</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Great+Vibes&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --verde:#9bb7a5;
+  --verde-claro:#e6efe9;
+  --cafe:#8a7660;
+  --fondo:#fbf9f6;
+}
+
+/* Reset */
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:'Montserrat',sans-serif;
+  background:#f3efe8;
+  color:#6b5f52;
+}
+
+/* Música YouTube oculta */
+.youtube-audio{
+  width:0;
+  height:0;
+  border:0;
+  visibility:hidden;
+}
+
+/* Animaciones */
+.fade-up{
+  animation:fadeUp 1.4s ease forwards;
+}
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(40px)}
+  to{opacity:1; transform:translateY(0)}
+}
+
+.zoom{
+  animation:zoom 1.6s ease forwards;
+}
+@keyframes zoom{
+  from{opacity:0; transform:scale(.9)}
+  to{opacity:1; transform:scale(1)}
+}
+
+/* Hero */
+.hero{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:30px;
+  background:url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+}
+
+/* Card */
+.card{
+  max-width:1200px;
+  width:100%;
+  background:var(--fondo);
+  border-radius:22px;
+  box-shadow:0 30px 70px rgba(0,0,0,.18);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  padding:70px;
+  position:relative;
+}
+
+/* Flores */
+.flower{
+  position:absolute;
+  width:160px;
+  opacity:.9;
+  filter:hue-rotate(25deg) saturate(1.1);
+}
+.flower.top{
+  top:-40px;
+  right:-40px;
+}
+.flower.bottom{
+  bottom:-40px;
+  left:-40px;
+}
+
+/* Texto */
+.subtitle{
+  font-size:18px;
+  margin-bottom:10px;
+}
+
+.name{
+  font-family:'Great Vibes',cursive;
+  font-size:76px;
+  color:var(--verde);
+  margin:10px 0;
+}
+
+.date{
+  font-family:'Playfair Display',serif;
+  letter-spacing:3px;
+  margin-bottom:30px;
+}
+
+p{
+  line-height:1.8;
+  max-width:420px;
+}
+
+/* Botón */
+.buttons{
+  margin-top:35px;
+}
+.btn{
+  display:inline-block;
+  padding:15px 36px;
+  border-radius:30px;
+  text-decoration:none;
+  font-size:14px;
+  background:var(--verde);
+  color:#fff;
+  transition:.3s;
+}
+.btn:hover{
+  opacity:.85;
+}
+
+/* Imagen */
+.image{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.photo{
+  width:380px;
+  height:380px;
+  border-radius:50%;
+  overflow:hidden;
+  border:12px solid var(--verde-claro);
+  box-shadow:0 15px 35px rgba(0,0,0,.25);
+}
+
+.photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* Responsive */
+@media(max-width:900px){
+
+  .hero{
+    padding:15px;
+  }
+
+  .card{
+    grid-template-columns:1fr;
+    padding:35px 20px;
+    text-align:center;
+    gap:35px;
+  }
+
+  .name{
+    font-size:56px;
+  }
+
+  .date{
+    font-size:14px;
+    letter-spacing:2px;
+  }
+
+  p{
+    margin:auto;
+    font-size:14px;
+  }
+
+  .photo{
+    width:260px;
+    height:260px;
+    border:10px solid var(--verde-claro);
+  }
+
+  .flower{
+    width:100px;
+  }
+
+  .flower.top{
+    top:-20px;
+    right:-20px;
+  }
+
+  .flower.bottom{
+    bottom:-20px;
+    left:-20px;
+  }
+
+  .btn{
+    padding:14px 30px;
+    font-size:13px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Música -->
+<iframe
+  class="youtube-audio"
+  src="https://www.youtube.com/embed/vfqnbC8m--w?autoplay=1&loop=1&playlist=vfqnbC8m--w"
+  allow="autoplay">
+</iframe>
+
+<section class="hero">
+  <div class="card">
+
+    <!-- Flores -->
+    <img class="flower top" src="https://i.imgur.com/4M7IWwP.png">
+    <img class="flower bottom" src="https://i.imgur.com/YZ6FZJm.png">
+
+    <!-- Texto -->
+    <div class="fade-up">
+      <div class="subtitle">Acompáñanos al bautizo de</div>
+      <div class="name">Jhon Oliver</div>
+      <div class="date">25 · DICIEMBRE</div>
+
+      <p>
+        Con la bendición de Dios y el amor de nuestra familia,
+        queremos compartir contigo este momento tan especial.
+      </p>
+
+      <div class="buttons">
+        <a class="btn"
+           href="https://wa.me/5583190406?text=Confirmo%20mi%20asistencia%20al%20bautizo%20de%20Jhon%20Oliver"
+           target="_blank">
+          CONFIRMAR ASISTENCIA
+        </a>
+      </div>
+    </div>
+
+    <!-- Imagen -->
+    <div class="image zoom">
+      <div class="photo">
+        <img src="baby.jpg" alt="Bebé Jhon Oliver">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
