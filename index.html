@@ -12,11 +12,10 @@
 :root{
   --verde:#9bb7a5;
   --verde-claro:#e6efe9;
-  --cafe:#8a7660;
   --fondo:#fbf9f6;
+  --texto:#6b5f52;
 }
 
-/* Reset */
 *{
   box-sizing:border-box;
   margin:0;
@@ -26,18 +25,10 @@
 body{
   font-family:'Montserrat',sans-serif;
   background:#f3efe8;
-  color:#6b5f52;
+  color:var(--texto);
 }
 
-/* Música YouTube */
-.youtube-audio{
-  width:0;
-  height:0;
-  border:0;
-  visibility:hidden;
-}
-
-/* Hero */
+/* HERO */
 .hero{
   min-height:100vh;
   display:flex;
@@ -47,7 +38,7 @@ body{
   background:url('https://www.transparenttextures.com/patterns/paper-fibers.png');
 }
 
-/* Card */
+/* CARD */
 .card{
   max-width:1200px;
   width:100%;
@@ -59,30 +50,29 @@ body{
   gap:50px;
   padding:70px;
   position:relative;
-  overflow:visible; /* 🔴 CLAVE */
+  overflow:hidden;
 }
 
-/* Flores */
+/* FLORES */
 .flower{
   position:absolute;
-  width:260px;
-  opacity:.9;
-  filter:hue-rotate(25deg) saturate(1.1);
-  z-index:1;
+  width:320px;
+  opacity:.95;
+  z-index:0;
   pointer-events:none;
 }
 
 .flower.top{
-  top:-90px;
-  right:-90px;
+  top:-40px;
+  right:-40px;
 }
 
 .flower.bottom{
-  bottom:-90px;
-  left:-90px;
+  bottom:-40px;
+  left:-40px;
 }
 
-/* Texto */
+/* TEXTO */
 .subtitle{
   font-size:18px;
   margin-bottom:10px;
@@ -106,7 +96,7 @@ p{
   max-width:420px;
 }
 
-/* Botón */
+/* BOTÓN */
 .buttons{
   margin-top:35px;
 }
@@ -126,11 +116,12 @@ p{
   opacity:.85;
 }
 
-/* Imagen */
+/* IMAGEN */
 .image{
   display:flex;
   justify-content:center;
   align-items:center;
+  z-index:1;
 }
 
 .photo{
@@ -140,7 +131,6 @@ p{
   overflow:hidden;
   border:12px solid var(--verde-claro);
   box-shadow:0 15px 35px rgba(0,0,0,.25);
-  z-index:2;
 }
 
 .photo img{
@@ -149,7 +139,7 @@ p{
   object-fit:cover;
 }
 
-/* Responsive */
+/* RESPONSIVE */
 @media(max-width:900px){
   .card{
     grid-template-columns:1fr;
@@ -164,7 +154,6 @@ p{
 
   .date{
     font-size:14px;
-    letter-spacing:2px;
   }
 
   p{
@@ -179,18 +168,17 @@ p{
   }
 
   .flower{
-    width:180px;
-    opacity:.85;
+    width:220px;
   }
 
   .flower.top{
-    top:-60px;
-    right:-60px;
+    top:-30px;
+    right:-30px;
   }
 
   .flower.bottom{
-    bottom:-60px;
-    left:-60px;
+    bottom:-30px;
+    left:-30px;
   }
 }
 </style>
@@ -198,29 +186,25 @@ p{
 
 <body>
 
-<!-- Música -->
-<iframe
-  class="youtube-audio"
-  src="https://www.youtube.com/embed/vfqnbC8m--w?autoplay=1&loop=1&playlist=vfqnbC8m--w"
-  allow="autoplay">
-</iframe>
-
 <section class="hero">
   <div class="card">
 
-    <!-- Flores -->
+    <!-- FLORES -->
     <img class="flower top" src="flor1.png" alt="">
     <img class="flower bottom" src="flor2.png" alt="">
 
-    <!-- Texto -->
+    <!-- TEXTO -->
     <div>
       <div class="subtitle">Acompáñanos al bautizo de</div>
       <div class="name">Jhon Oliver</div>
       <div class="date">25 · ABRIL</div>
 
       <p>
-        Con la bendición de Dios y el amor de nuestra familia,
-        queremos compartir contigo este momento tan especial.
+        Hoy el agua no limpia, solo anuncia.<br>
+        Que tu vida empieza a florecer rodeada de brazos que te cuidan,<br>
+        de miradas que te aman,<br>
+        y de caminos que esperan tus pasos.<br><br>
+        Que este día sea el primer recuerdo de una historia llena de luz.
       </p>
 
       <div class="buttons">
@@ -232,7 +216,7 @@ p{
       </div>
     </div>
 
-    <!-- Imagen -->
+    <!-- IMAGEN -->
     <div class="image">
       <div class="photo">
         <img src="baby.jpg" alt="Bebé Jhon Oliver">
@@ -241,6 +225,19 @@ p{
 
   </div>
 </section>
+
+<!-- MÚSICA: SE ESCUCHA AL TOCAR CUALQUIER PARTE -->
+<iframe id="music" src="" allow="autoplay" style="display:none;"></iframe>
+
+<script>
+document.addEventListener("click", function(){
+  const music = document.getElementById("music");
+  if(music.src === ""){
+    music.src =
+    "https://www.youtube.com/embed/vfqnbC8m--w?autoplay=1&loop=1&playlist=vfqnbC8m--w";
+  }
+},{ once:true });
+</script>
 
 </body>
 </html>
