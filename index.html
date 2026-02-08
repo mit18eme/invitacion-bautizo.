@@ -29,7 +29,7 @@ body{
   color:#6b5f52;
 }
 
-/* Música YouTube oculta */
+/* Música YouTube */
 .youtube-audio{
   width:0;
   height:0;
@@ -69,22 +69,25 @@ body{
   max-width:1200px;
   width:100%;
   background:var(--fondo);
-  border-radius:22px;
+  border-radius:24px;
   box-shadow:0 30px 70px rgba(0,0,0,.18);
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:50px;
   padding:70px;
   position:relative;
+  overflow:hidden;
 }
 
 /* Flores */
 .flower{
   position:absolute;
-  width:260px;          /* MÁS GRANDES */
+  width:260px;
   opacity:.9;
   filter:hue-rotate(25deg) saturate(1.1);
   z-index:1;
+}
+
 .flower.top{
   top:-90px;
   right:-90px;
@@ -123,9 +126,10 @@ p{
 .buttons{
   margin-top:35px;
 }
+
 .btn{
   display:inline-block;
-  padding:15px 36px;
+  padding:16px 40px;
   border-radius:30px;
   text-decoration:none;
   font-size:14px;
@@ -133,6 +137,7 @@ p{
   color:#fff;
   transition:.3s;
 }
+
 .btn:hover{
   opacity:.85;
 }
@@ -151,6 +156,7 @@ p{
   overflow:hidden;
   border:12px solid var(--verde-claro);
   box-shadow:0 15px 35px rgba(0,0,0,.25);
+  z-index:2;
 }
 
 .photo img{
@@ -191,20 +197,23 @@ p{
     width:260px;
     height:260px;
     border:10px solid var(--verde-claro);
-.flower{
-  width:180px;
-  opacity:.85;
-}
+  }
 
-.flower.top{
-  top:-60px;
-  right:-60px;
-}
+  .flower{
+    width:180px;
+    opacity:.85;
+  }
 
-.flower.bottom{
-  bottom:-60px;
-  left:-60px;
-}
+  .flower.top{
+    top:-60px;
+    right:-60px;
+  }
+
+  .flower.bottom{
+    bottom:-60px;
+    left:-60px;
+  }
+
   .btn{
     padding:14px 30px;
     font-size:13px;
@@ -226,8 +235,8 @@ p{
   <div class="card">
 
     <!-- Flores -->
-    <img class="flower top" src="flor1.png">
-<img class="flower bottom" src="flor2.png">
+    <img class="flower top" src="flor1.png" alt="">
+    <img class="flower bottom" src="flor2.png" alt="">
 
     <!-- Texto -->
     <div class="fade-up">
@@ -261,5 +270,3 @@ p{
 
 </body>
 </html>
-
-
