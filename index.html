@@ -2,44 +2,73 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<title>Bautizo de Jhon Oliver</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bautizo Jhon Oliver</title>
 
-<!-- GOOGLE FONTS -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Great+Vibes&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
-body{
+:root{
+  --verde:#9bb7a5;
+  --verde-claro:#e6efe9;
+  --cafe:#8a7660;
+  --fondo:#fbf9f6;
+}
+
+/* Reset */
+*{
+  box-sizing:border-box;
   margin:0;
+  padding:0;
+}
+
+body{
+  font-family:'Montserrat',sans-serif;
+  background:#f3efe8;
+  color:#6b5f52;
+}
+
+/* Música YouTube */
+.youtube-audio{
+  width:0;
+  height:0;
+  border:0;
+  visibility:hidden;
+}
+
+/* Hero */
+.hero{
   min-height:100vh;
   display:flex;
-  align-items:center;
   justify-content:center;
-  background:linear-gradient(135deg,#efefec,#f8f6f3);
-  font-family:'Montserrat',sans-serif;
+  align-items:center;
+  padding:30px;
+  background:url('https://www.transparenttextures.com/patterns/paper-fibers.png');
 }
 
-/* TARJETA */
+/* Card */
 .card{
-  position:relative;
-  max-width:1100px;
-  width:90%;
-  background:#fbfaf7;
-  border-radius:28px;
+  max-width:1200px;
+  width:100%;
+  background:var(--fondo);
+  border-radius:24px;
+  box-shadow:0 30px 70px rgba(0,0,0,.18);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
   padding:70px;
-  display:flex;
-  gap:60px;
-  box-shadow:0 20px 60px rgba(0,0,0,.15);
-  overflow:visible;
+  position:relative;
+  overflow:visible; /* 🔴 CLAVE */
 }
 
-/* FLORES */
+/* Flores */
 .flower{
   position:absolute;
   width:260px;
   opacity:.9;
   filter:hue-rotate(25deg) saturate(1.1);
-  z-index:10;
+  z-index:1;
   pointer-events:none;
 }
 
@@ -53,148 +82,86 @@ body{
   left:-90px;
 }
 
-/* TEXTO */
-.text{
-  flex:1;
+/* Texto */
+.subtitle{
+  font-size:18px;
+  margin-bottom:10px;
 }
 
-.text h4{
-  font-weight:300;
-  letter-spacing:1px;
-  margin:0 0 20px;
-  color:#6b6b6b;
-}
-
-.text h1{
-  font-family:'Playfair Display',serif;
-  font-size:64px;
-  color:#9fb9a7;
-  margin:0 0 20px;
+.name{
+  font-family:'Great Vibes',cursive;
+  font-size:76px;
+  color:var(--verde);
+  margin:10px 0;
 }
 
 .date{
-  letter-spacing:4px;
+  font-family:'Playfair Display',serif;
+  letter-spacing:3px;
   margin-bottom:30px;
-  color:#555;
 }
 
-.text p{
+p{
   line-height:1.8;
   max-width:420px;
-  color:#666;
 }
 
-/* BOTÓN */
+/* Botón */
+.buttons{
+  margin-top:35px;
+}
+
 .btn{
   display:inline-block;
-  margin-top:35px;
-  padding:16px 36px;
-  background:#9fb9a7;
-  color:white;
-  border-radius:40px;
+  padding:16px 40px;
+  border-radius:30px;
   text-decoration:none;
-  font-weight:600;
+  font-size:14px;
+  background:var(--verde);
+  color:#fff;
   transition:.3s;
 }
 
 .btn:hover{
-  background:#87a895;
+  opacity:.85;
 }
 
-/* FOTO */
-.photo{
-  flex:1;
+/* Imagen */
+.image{
   display:flex;
   justify-content:center;
   align-items:center;
 }
 
-.photo img{
+.photo{
   width:380px;
   height:380px;
-  object-fit:cover;
   border-radius:50%;
-  border:12px solid #e8f0ec;
-  box-shadow:0 15px 40px rgba(0,0,0,.25);
+  overflow:hidden;
+  border:12px solid var(--verde-claro);
+  box-shadow:0 15px 35px rgba(0,0,0,.25);
+  z-index:2;
 }
 
-/* MÚSICA */
-audio{
-  display:none;
+.photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
 
-/* RESPONSIVE */
+/* Responsive */
 @media(max-width:900px){
   .card{
-    flex-direction:column;
-    padding:40px 30px;
+    grid-template-columns:1fr;
+    padding:35px 20px;
     text-align:center;
+    gap:35px;
   }
 
-  .photo img{
-    width:260px;
-    height:260px;
+  .name{
+    font-size:56px;
   }
 
-  .text h1{
-    font-size:48px;
-  }
-
-  .flower{
-    width:180px;
-    opacity:.85;
-  }
-
-  .flower.top{
-    top:-60px;
-    right:-60px;
-  }
-
-  .flower.bottom{
-    bottom:-60px;
-    left:-60px;
-  }
-}
-</style>
-</head>
-
-<body>
-
-<div class="card">
-
-  <!-- FLORES -->
-  <img src="https://i.imgur.com/6WQF9dP.png" class="flower top">
-  <img src="https://i.imgur.com/6WQF9dP.png" class="flower bottom">
-
-  <!-- TEXTO -->
-  <div class="text">
-    <h4>Acompáñanos al bautizo de</h4>
-    <h1>Jhon Oliver</h1>
-    <div class="date">25 · DICIEMBRE</div>
-    <p>
-      Con la bendición de Dios y el amor de nuestra familia,
-      queremos compartir contigo este momento tan especial.
-    </p>
-
-    <!-- BOTÓN WHATSAPP -->
-    <a class="btn" 
-       href="https://wa.me/525583190406?text=Confirmo%20mi%20asistencia%20al%20bautizo%20de%20Jhon%20Oliver" 
-       target="_blank">
-       CONFIRMAR ASISTENCIA
-    </a>
-  </div>
-
-  <!-- FOTO -->
-  <div class="photo">
-    <img src="IMG-20251027-WA0153.jpg" alt="Jhon Oliver">
-  </div>
-
-</div>
-
-<!-- MÚSICA -->
-<audio autoplay loop>
-  <source src="https://www.youtube.com/watch?v=vfqnbC8m--w" type="audio/mp3">
-</audio>
-
-</body>
-</html>
+  .date{
+    font-size:14px;
+    letter-spacing:2px;
