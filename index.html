@@ -5,128 +5,130 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bautizo Jhon Oliver</title>
 
-<!-- FUENTES -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-  font-family:'Montserrat', sans-serif;
-}
-
 body{
+  margin:0;
   min-height:100vh;
-  background:linear-gradient(180deg,#f3f3f0,#e6e6e1);
   display:flex;
-  justify-content:center;
   align-items:center;
-  padding:20px;
-}
-
-/* CONTENEDOR GENERAL */
-.wrapper{
-  position:relative;
-  max-width:1000px;
-  width:100%;
+  justify-content:center;
+  background:linear-gradient(135deg,#efefec,#f8f6f3);
+  font-family:'Montserrat',sans-serif;
 }
 
 /* TARJETA */
 .card{
+  position:relative;
+  max-width:1100px;
+  width:90%;
   background:#fbfaf7;
   border-radius:28px;
-  padding:60px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  align-items:center;
-  gap:40px;
-  position:relative;
-  overflow:visible;
-  box-shadow:0 20px 40px rgba(0,0,0,.08);
-}
-
-/* TEXTO */
-.text h4{
-  color:#7b7b72;
-  font-weight:300;
-  margin-bottom:10px;
-}
-
-.text h1{
-  font-family:'Playfair Display', serif;
-  font-size:58px;
-  color:#9fb8a7;
-  margin-bottom:10px;
-}
-
-.text .date{
-  letter-spacing:3px;
-  color:#6f6f66;
-  margin-bottom:25px;
-}
-
-.text p{
-  color:#6a6a62;
-  line-height:1.7;
-  margin-bottom:35px;
-}
-
-/* BOTÓN */
-.btn{
-  display:inline-block;
-  padding:14px 32px;
-  background:#9fb8a7;
-  color:white;
-  border-radius:40px;
-  text-decoration:none;
-  font-size:14px;
-  letter-spacing:1px;
-}
-
-/* FOTO */
-.photo{
+  padding:70px;
   display:flex;
-  justify-content:center;
-}
-
-.photo img{
-  width:320px;
-  height:320px;
-  object-fit:cover;
-  border-radius:50%;
-  border:14px solid #e4efe8;
-  box-shadow:0 20px 40px rgba(0,0,0,.15);
+  gap:60px;
+  box-shadow:0 20px 60px rgba(0,0,0,.15);
+  overflow:visible;
 }
 
 /* FLORES */
 .flower{
   position:absolute;
-  width:300px;
+  width:260px;
+  opacity:.9;
+  filter:hue-rotate(25deg) saturate(1.1);
   z-index:10;
   pointer-events:none;
 }
 
 .flower.top{
-  top:-110px;
-  right:-110px;
+  top:-90px;
+  right:-90px;
 }
 
 .flower.bottom{
-  bottom:-110px;
-  left:-110px;
+  bottom:-90px;
+  left:-90px;
+}
+
+/* TEXTO */
+.text{
+  flex:1;
+}
+
+.text h4{
+  font-weight:300;
+  letter-spacing:1px;
+  margin:0 0 20px;
+  color:#6b6b6b;
+}
+
+.text h1{
+  font-family:'Playfair Display',serif;
+  font-size:64px;
+  color:#9fb9a7;
+  margin:0 0 20px;
+}
+
+.date{
+  letter-spacing:4px;
+  margin-bottom:30px;
+  color:#555;
+}
+
+.text p{
+  line-height:1.8;
+  max-width:420px;
+  color:#666;
+}
+
+/* BOTÓN */
+.btn{
+  display:inline-block;
+  margin-top:35px;
+  padding:16px 36px;
+  background:#9fb9a7;
+  color:white;
+  border-radius:40px;
+  text-decoration:none;
+  font-weight:600;
+  transition:.3s;
+}
+
+.btn:hover{
+  background:#87a895;
+}
+
+/* FOTO */
+.photo{
+  flex:1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.photo img{
+  width:380px;
+  height:380px;
+  object-fit:cover;
+  border-radius:50%;
+  border:12px solid #e8f0ec;
+  box-shadow:0 15px 40px rgba(0,0,0,.25);
+}
+
+/* MÚSICA */
+audio{
+  display:none;
 }
 
 /* RESPONSIVE */
 @media(max-width:900px){
   .card{
-    grid-template-columns:1fr;
-    padding:40px 25px;
+    flex-direction:column;
+    padding:40px 30px;
     text-align:center;
-  }
-
-  .text h1{
-    font-size:44px;
   }
 
   .photo img{
@@ -134,18 +136,23 @@ body{
     height:260px;
   }
 
+  .text h1{
+    font-size:48px;
+  }
+
   .flower{
-    width:200px;
+    width:180px;
+    opacity:.85;
   }
 
   .flower.top{
-    top:-70px;
-    right:-70px;
+    top:-60px;
+    right:-60px;
   }
 
   .flower.bottom{
-    bottom:-70px;
-    left:-70px;
+    bottom:-60px;
+    left:-60px;
   }
 }
 </style>
@@ -153,43 +160,41 @@ body{
 
 <body>
 
-<div class="wrapper">
+<div class="card">
 
   <!-- FLORES -->
-  <img src="https://i.imgur.com/0Z8FZ5x.png" class="flower top">
-  <img src="https://i.imgur.com/0Z8FZ5x.png" class="flower bottom">
+  <img src="https://i.imgur.com/6WQF9dP.png" class="flower top">
+  <img src="https://i.imgur.com/6WQF9dP.png" class="flower bottom">
 
-  <div class="card">
+  <!-- TEXTO -->
+  <div class="text">
+    <h4>Acompáñanos al bautizo de</h4>
+    <h1>Jhon Oliver</h1>
+    <div class="date">25 · DICIEMBRE</div>
+    <p>
+      Con la bendición de Dios y el amor de nuestra familia,
+      queremos compartir contigo este momento tan especial.
+    </p>
 
-    <div class="text">
-      <h4>Acompáñanos al bautizo de</h4>
-      <h1>Jhon Oliver</h1>
-      <div class="date">25 · DICIEMBRE</div>
-
-      <p>
-        Con la bendición de Dios y el amor de nuestra familia,
-        queremos compartir contigo este momento tan especial.
-      </p>
-
-      <a class="btn"
-         href="https://wa.me/5583190406?text=Confirmo%20mi%20asistencia%20al%20bautizo%20de%20Jhon%20Oliver"
-         target="_blank">
-        CONFIRMAR ASISTENCIA
-      </a>
-    </div>
-
-    <div class="photo">
-      <img src="https://i.imgur.com/REEMPLAZA_TU_FOTO.jpg" alt="Jhon Oliver">
-    </div>
-
+    <!-- BOTÓN WHATSAPP -->
+    <a class="btn" 
+       href="https://wa.me/525583190406?text=Confirmo%20mi%20asistencia%20al%20bautizo%20de%20Jhon%20Oliver" 
+       target="_blank">
+       CONFIRMAR ASISTENCIA
+    </a>
   </div>
+
+  <!-- FOTO -->
+  <div class="photo">
+    <img src="IMG-20251027-WA0153.jpg" alt="Jhon Oliver">
+  </div>
+
 </div>
 
 <!-- MÚSICA -->
-<iframe width="0" height="0"
-src="https://www.youtube.com/embed/vfqnbC8m--w?autoplay=1&loop=1&playlist=vfqnbC8m--w"
-allow="autoplay">
-</iframe>
+<audio autoplay loop>
+  <source src="https://www.youtube.com/watch?v=vfqnbC8m--w" type="audio/mp3">
+</audio>
 
 </body>
 </html>
