@@ -81,17 +81,18 @@ body{
 /* Flores */
 .flower{
   position:absolute;
-  width:160px;
+  width:260px;          /* MÁS GRANDES */
   opacity:.9;
   filter:hue-rotate(25deg) saturate(1.1);
-}
+  z-index:1;
 .flower.top{
-  top:-40px;
-  right:-40px;
+  top:-90px;
+  right:-90px;
 }
+
 .flower.bottom{
-  bottom:-40px;
-  left:-40px;
+  bottom:-90px;
+  left:-90px;
 }
 
 /* Texto */
@@ -190,22 +191,20 @@ p{
     width:260px;
     height:260px;
     border:10px solid var(--verde-claro);
-  }
+.flower{
+  width:180px;
+  opacity:.85;
+}
 
-  .flower{
-    width:100px;
-  }
+.flower.top{
+  top:-60px;
+  right:-60px;
+}
 
-  .flower.top{
-    top:-20px;
-    right:-20px;
-  }
-
-  .flower.bottom{
-    bottom:-20px;
-    left:-20px;
-  }
-
+.flower.bottom{
+  bottom:-60px;
+  left:-60px;
+}
   .btn{
     padding:14px 30px;
     font-size:13px;
@@ -262,4 +261,5 @@ p{
 
 </body>
 </html>
+
 
