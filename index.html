@@ -15,162 +15,166 @@
   --fondo:#fbf9f6;
 }
 
-*{box-sizing:border-box;margin:0;padding:0;}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
 body{
   font-family:'Montserrat',sans-serif;
   background:#f3efe8;
   color:#6b5f52;
+  overflow-x:hidden;
 }
 
-/* pantalla inicio */
-#inicio{
-position:fixed;
-top:0;left:0;
-width:100%;height:100%;
-background:#f3efe8;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-z-index:9999;
-text-align:center;
-padding:20px;
+/* AUDIO */
+audio{
+  display:none;
 }
 
-#inicio h2{
-font-family:'Playfair Display',serif;
-margin-bottom:25px;
-}
-
-#inicio button{
-padding:15px 35px;
-border:none;
-border-radius:30px;
-background:var(--verde);
-color:white;
-font-size:16px;
-cursor:pointer;
-}
-
-/* hero */
+/* HERO */
 .hero{
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:20px;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+  background:url('https://www.transparenttextures.com/patterns/paper-fibers.png');
 }
 
-/* card */
 .card{
-max-width:1200px;
-width:100%;
-background:var(--fondo);
-border-radius:24px;
-box-shadow:0 30px 70px rgba(0,0,0,.18);
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:50px;
-padding:60px;
-position:relative;
-overflow:hidden;
+  max-width:1100px;
+  width:100%;
+  background:var(--fondo);
+  border-radius:24px;
+  box-shadow:0 30px 70px rgba(0,0,0,.18);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  padding:60px;
+  position:relative;
+  overflow:hidden;
 }
 
-/* flores */
+/* FLORES */
 .flower{
-position:absolute;
-width:220px;
-opacity:.9;
-z-index:1;
+  position:absolute;
+  width:260px;
+  opacity:.95;
+  filter:hue-rotate(25deg) saturate(1.1);
+  z-index:1;
 }
 
 .flower.top{
-top:-60px;
-right:-60px;
+  top:-80px;
+  right:-80px;
 }
 
 .flower.bottom{
-bottom:-60px;
-left:-60px;
+  bottom:-80px;
+  left:-80px;
 }
 
-/* texto */
-.subtitle{font-size:18px;margin-bottom:10px;}
+/* TEXTO */
+.subtitle{
+  font-size:18px;
+  margin-bottom:10px;
+}
 
 .name{
-font-family:'Great Vibes',cursive;
-font-size:70px;
-color:var(--verde);
-margin:10px 0;
+  font-family:'Great Vibes',cursive;
+  font-size:70px;
+  color:var(--verde);
+  margin:10px 0;
 }
 
 .date{
-font-family:'Playfair Display',serif;
-letter-spacing:3px;
-margin-bottom:25px;
+  font-family:'Playfair Display',serif;
+  letter-spacing:3px;
+  margin-bottom:25px;
 }
 
 p{
-line-height:1.8;
-max-width:420px;
+  line-height:1.7;
+  max-width:420px;
 }
 
-.buttons{margin-top:35px;}
+/* BOTON */
+.buttons{
+  margin-top:30px;
+}
 
 .btn{
-display:inline-block;
-padding:16px 40px;
-border-radius:30px;
-text-decoration:none;
-font-size:14px;
-background:var(--verde);
-color:#fff;
+  display:inline-block;
+  padding:16px 38px;
+  border-radius:30px;
+  text-decoration:none;
+  font-size:14px;
+  background:var(--verde);
+  color:#fff;
+  transition:.3s;
 }
 
-/* imagen */
+.btn:hover{
+  opacity:.85;
+}
+
+/* FOTO */
 .image{
-display:flex;
-justify-content:center;
-align-items:center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
 .photo{
-width:380px;
-height:380px;
-border-radius:50%;
-overflow:hidden;
-border:12px solid var(--verde-claro);
-box-shadow:0 15px 35px rgba(0,0,0,.25);
+  width:360px;
+  height:360px;
+  border-radius:50%;
+  overflow:hidden;
+  border:12px solid var(--verde-claro);
+  box-shadow:0 15px 35px rgba(0,0,0,.25);
+  z-index:2;
 }
 
 .photo img{
-width:100%;
-height:100%;
-object-fit:cover;
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
 
-/* responsive */
+/* RESPONSIVE */
 @media(max-width:900px){
 
-.card{
-grid-template-columns:1fr;
-padding:35px 20px;
-text-align:center;
-gap:35px;
-}
+  .card{
+    grid-template-columns:1fr;
+    padding:35px 20px;
+    text-align:center;
+  }
 
-.name{font-size:50px;}
-.date{font-size:14px;}
-p{margin:auto;font-size:14px;}
+  .name{
+    font-size:50px;
+  }
 
-.photo{
-width:250px;
-height:250px;
-}
+  .photo{
+    width:260px;
+    height:260px;
+  }
 
-.flower{width:150px;}
+  .flower{
+    width:170px;
+    opacity:.9;
+  }
 
+  .flower.top{
+    top:-50px;
+    right:-50px;
+  }
+
+  .flower.bottom{
+    bottom:-50px;
+    left:-50px;
+  }
 }
 </style>
 </head>
@@ -179,23 +183,29 @@ height:250px;
 
 <!-- MUSICA -->
 <audio id="musica" loop>
-  <source src="cancion.mp3" type="audio/mpeg">
+  <source src="musica.mp3" type="audio/mpeg">
 </audio>
 
-<!-- PANTALLA DE ENTRADA -->
-<div id="inicio">
-  <h2>Estás invitado a un momento muy especial</h2>
-  <button onclick="entrarInvitacion()">Entrar a la invitación</button>
-</div>
+<script>
+const audio = document.getElementById("musica");
+
+window.addEventListener("load", () => {
+  audio.play().catch(() => {
+    document.body.addEventListener("click", () => {
+      audio.play();
+    }, { once:true });
+  });
+});
+</script>
 
 <section class="hero">
   <div class="card">
 
-    <!-- flores -->
+    <!-- FLORES -->
     <img class="flower top" src="flor1.png">
     <img class="flower bottom" src="flor2.png">
 
-    <!-- texto -->
+    <!-- TEXTO -->
     <div>
       <div class="subtitle">Acompáñanos al bautizo de</div>
       <div class="name">Jhon Oliver</div>
@@ -203,43 +213,33 @@ height:250px;
 
       <p>
       Hoy el agua no limpia,<br>
-      solo anuncia.<br><br>
-
+      solo anuncia.<br>
       Que tu vida empieza a florecer<br>
       rodeada de brazos que te cuidan,<br>
       de miradas que te aman,<br>
       y de caminos que esperan tus pasos.<br><br>
-
       Que este día sea el primer recuerdo<br>
       de una historia llena de luz.
       </p>
 
       <div class="buttons">
         <a class="btn"
-        href="https://wa.me/5583190406?text=Confirmo%20mi%20asistencia%20al%20bautizo%20de%20Jhon%20Oliver"
-        target="_blank">
-        CONFIRMAR ASISTENCIA
+           href="https://wa.me/5583190406?text=Confirmo%20mi%20asistencia%20al%20bautizo%20de%20Jhon%20Oliver"
+           target="_blank">
+          CONFIRMAR ASISTENCIA
         </a>
       </div>
     </div>
 
-    <!-- foto nueva -->
+    <!-- FOTO -->
     <div class="image">
       <div class="photo">
-        <img src="bebe.jpg" alt="Bebé">
+        <img src="bebe.jpg" alt="Bebé Jhon Oliver">
       </div>
     </div>
 
   </div>
 </section>
-
-<script>
-function entrarInvitacion(){
-  document.getElementById("inicio").style.display="none";
-  let audio=document.getElementById("musica");
-  audio.play();
-}
-</script>
 
 </body>
 </html>
