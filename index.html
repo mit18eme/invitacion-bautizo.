@@ -4,92 +4,210 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Bautizo</title>
+<title>Invitación Bautizo Jhon Oliver</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Montserrat&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
+
 body{
-  margin:0;
-  font-family:'Montserrat', sans-serif;
-  background:#eef1ea;
+    margin:0;
+    font-family: 'Montserrat', sans-serif;
+    background:#e9efe6;
+    overflow-x:hidden;
 }
 
-/* INTRO */
-#intro{
-  height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  background:#e5ecdf;
+/* PANTALLA INICIAL */
+
+#pantalla-inicial{
+    position:fixed;
+    width:100%;
+    height:100vh;
+    background:#dfe8db;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    z-index:10;
+    text-align:center;
 }
 
-#intro h1{
-  color:#6f8f6b;
-  font-size:28px;
-  margin-bottom:30px;
+#pantalla-inicial h1{
+    color:#6c8f6b;
+    font-size:32px;
+    margin-bottom:30px;
 }
 
 #btnEntrar{
-  background:#7da77a;
-  border:none;
-  color:white;
-  padding:15px 35px;
-  border-radius:40px;
-  font-size:18px;
-  cursor:pointer;
+    background:#7fa37f;
+    border:none;
+    padding:15px 35px;
+    border-radius:30px;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
 }
 
-/* INVITACION */
-#invitacion{
-  display:none;
-  justify-content:center;
-  align-items:center;
-  min-height:100vh;
-  padding:20px;
-}
+/* CONTENIDO INVITACIÓN */
 
-.card{
-  background:white;
-  border-radius:20px;
-  padding:30px;
-  max-width:900px;
-  width:100%;
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  justify-content:space-between;
-  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+.contenedor{
+    max-width:1100px;
+    margin:80px auto;
+    background:#f3f1ec;
+    border-radius:25px;
+    padding:40px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:relative;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
 }
 
 .texto{
-  max-width:420px;
+    width:55%;
 }
 
 .texto h2{
-  color:#6f8f6b;
-  font-size:20px;
+    color:#7d6b4c;
+    font-weight:400;
 }
 
 .nombre{
-  font-family:'Playfair Display', serif;
-  font-size:42px;
-  color:#7da77a;
+    font-family:'Great Vibes', cursive;
+    font-size:60px;
+    color:#8da993;
+    margin:10px 0;
 }
 
 .fecha{
-  margin:10px 0;
-  letter-spacing:3px;
+    letter-spacing:3px;
+    color:#7d6b4c;
+    margin-bottom:20px;
 }
 
-.poema{
-  margin-top:20px;
-  line-height:1.6;
-  color:#444;
+.descripcion{
+    line-height:1.6;
+    color:#6e6e6e;
 }
 
 .boton{
-  margin-top:25px;
-  display:inline-block;
+    margin-top:25px;
+    background:#8da993;
+    color:white;
+    padding:15px 30px;
+    border:none;
+    border-radius:25px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.foto{
+    width:40%;
+    text-align:center;
+}
+
+.foto img{
+    width:300px;
+    height:300px;
+    object-fit:cover;
+    border-radius:50%;
+    border:10px solid #dfe8db;
+}
+
+/* FLORES */
+
+.flor1{
+    position:absolute;
+    top:-40px;
+    right:-40px;
+    width:140px;
+}
+
+.flor2{
+    position:absolute;
+    bottom:-40px;
+    left:-40px;
+    width:140px;
+}
+
+@media(max-width:900px){
+    .contenedor{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .texto, .foto{
+        width:100%;
+    }
+
+    .nombre{
+        font-size:50px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- MUSICA -->
+<audio id="musica" src="musica.mp3" preload="none"></audio>
+
+<!-- PANTALLA INICIAL -->
+<div id="pantalla-inicial">
+    <h1>Te invito a un momento muy especial 💚</h1>
+    <button id="btnEntrar">Ver invitación</button>
+</div>
+
+<!-- INVITACION -->
+<div class="contenedor" id="invitacion" style="display:none;">
+
+    <img src="flor1.png" class="flor1">
+    <img src="flor2.png" class="flor2">
+
+    <div class="texto">
+        <h2>Acompáñanos al bautizo de</h2>
+        <div class="nombre">Jhon Oliver</div>
+        <div class="fecha">25 · ABRIL</div>
+
+        <div class="descripcion">
+            Hoy el agua no limpia,<br>
+            solo anuncia.<br>
+            Que tu vida empieza a florecer<br>
+            rodeada de brazos que te cuidan,<br>
+            de miradas que te aman,<br>
+            y de caminos que esperan tus pasos.<br><br>
+
+            Que este día sea el primer recuerdo<br>
+            de una historia llena de luz.
+        </div>
+
+        <button class="boton">Confirmar asistencia</button>
+    </div>
+
+    <div class="foto">
+        <img src="bebe.jpg" loading="lazy">
+    </div>
+
+</div>
+
+<script>
+
+const btn = document.getElementById("btnEntrar");
+const pantalla = document.getElementById("pantalla-inicial");
+const invitacion = document.getElementById("invitacion");
+const musica = document.getElementById("musica");
+
+btn.addEventListener("click", function(){
+
+    pantalla.style.display = "none";
+    invitacion.style.display = "flex";
+
+    musica.play().catch(()=>{});
+
+});
+
+</script>
+
+</body>
+</html>
