@@ -1,217 +1,181 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invitación Bautizo</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- FUENTES -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<title>Invitación Bautizo</title>
 
-    <style>
-        body{
-            margin:0;
-            padding:0;
-            background:#f6f1ea; /* cremita bonito */
-            font-family: 'Playfair Display', serif;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Pinyon+Script&display=swap" rel="stylesheet">
 
-        /* -------- PANTALLA INICIAL -------- */
-        #inicio{
-            position:fixed;
-            top:0;
-            left:0;
-            width:100%;
-            height:100vh;
-            background:#f6f1ea;
-            display:flex;
-            flex-direction:column;
-            justify-content:center;
-            align-items:center;
-            z-index:999;
-        }
+<style>
 
-        #inicio h2{
-            color:#6f8f7e;
-            font-weight:400;
-            margin-bottom:25px;
-            text-align:center;
-        }
+body{
+    margin:0;
+    padding:0;
+    background:#efe9e4;
+    font-family:'Playfair Display', serif;
+}
 
-        #inicio button{
-            background:#7fa38f;
-            border:none;
-            padding:15px 35px;
-            border-radius:30px;
-            color:white;
-            font-size:16px;
-            cursor:pointer;
-        }
+/* ===== PANTALLA INICIAL ===== */
+#inicio{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:#efe9e4;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    z-index:9999;
+}
 
-        /* -------- TARJETA -------- */
-        .card{
-            max-width:1100px;
-            margin:80px auto;
-            background:#fbf8f4;
-            border-radius:30px;
-            padding:50px;
-            position:relative;
-            box-shadow:0 5px 20px rgba(0,0,0,0.05);
-        }
+#inicio button{
+    padding:18px 40px;
+    border:none;
+    border-radius:30px;
+    background:#7da48f;
+    color:white;
+    font-size:18px;
+}
 
-        .contenido{
-            display:flex;
-            align-items:center;
-            justify-content:space-between;
-            gap:40px;
-        }
+/* TARJETA */
+.card{
+    max-width:1000px;
+    margin:60px auto;
+    background:#f6f2ee;
+    border-radius:25px;
+    padding:50px;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:40px;
+    overflow:hidden;
+}
 
-        .texto{
-            max-width:520px;
-        }
+/* TEXTO */
+.texto{
+    width:55%;
+    color:#5f6f64;
+}
 
-        .texto h1{
-            font-family:'Great Vibes', cursive;
-            color:#7fa38f;
-            font-size:60px;
-            margin:10px 0;
-        }
+.titulo{
+    font-size:20px;
+    margin-bottom:10px;
+}
 
-        .texto h3{
-            color:#8a7f73;
-            font-weight:400;
-            letter-spacing:3px;
-        }
+.nombre{
+    font-family:'Pinyon Script', cursive;
+    font-size:70px;
+    color:#7da48f;
+    margin:10px 0;
+}
 
-        .texto p{
-            color:#7c746c;
-            line-height:1.8;
-        }
+.fecha{
+    letter-spacing:3px;
+    margin-bottom:20px;
+}
 
-        .foto{
-            width:300px;
-            height:300px;
-            border-radius:50%;
-            overflow:hidden;
-            border:10px solid #e2ebe5;
-        }
+.mensaje{
+    line-height:1.7;
+    font-size:17px;
+}
 
-        .foto img{
-            width:100%;
-            height:100%;
-            object-fit:cover;
-        }
+/* BOTON */
+.boton{
+    margin-top:30px;
+    display:inline-block;
+    padding:15px 35px;
+    background:#7da48f;
+    color:white;
+    border-radius:30px;
+    text-decoration:none;
+    font-size:15px;
+}
 
-        .btn{
-            margin-top:25px;
-            display:inline-block;
-            background:#7fa38f;
-            color:white;
-            padding:14px 30px;
-            border-radius:30px;
-            text-decoration:none;
-        }
+/* FOTO */
+.foto{
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    object-fit:cover;
+    border:12px solid #dfe7e2;
+}
 
-        /* -------- FLORES -------- */
-        .flor{
-            position:absolute;
-            width:110px;
-            opacity:0.9;
-        }
+/* FLORES */
+.flor1{
+    position:absolute;
+    top:0;
+    right:0;
+    width:130px;
+}
 
-        .flor1{
-            top:-20px;
-            right:-20px;
-        }
+.flor2{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:130px;
+}
 
-        .flor2{
-            bottom:-20px;
-            left:-20px;
-        }
+/* RESPONSIVE */
+@media(max-width:900px){
+    .card{
+        flex-direction:column;
+        text-align:center;
+    }
 
-        /* -------- RESPONSIVO -------- */
-        @media(max-width:768px){
-            .contenido{
-                flex-direction:column;
-                text-align:center;
-            }
+    .texto{
+        width:100%;
+    }
 
-            .foto{
-                width:230px;
-                height:230px;
-            }
+    .foto{
+        width:220px;
+        height:220px;
+    }
+}
 
-            .texto h1{
-                font-size:45px;
-            }
-
-            .card{
-                padding:30px 20px;
-                margin:40px 15px;
-            }
-
-            .flor{
-                width:80px;
-            }
-        }
-    </style>
+</style>
 </head>
 
 <body>
 
-<!-- 🎵 MUSICA -->
-<audio id="musica" loop>
-    <source src="musica.mp3" type="audio/mpeg">
-</audio>
+<!-- ===== MUSICA ===== -->
+<audio id="musica" src="musica.mp3" loop></audio>
 
-<!-- 🌿 PANTALLA INICIAL -->
+<!-- ===== PANTALLA INICIAL ===== -->
 <div id="inicio">
-    <h2>Te invito a un momento muy especial para mí 💚</h2>
     <button onclick="entrar()">Entrar a la invitación</button>
 </div>
 
-<!-- 💌 TARJETA -->
-<div class="card" id="invitacion" style="display:none;">
+<!-- ===== INVITACION ===== -->
+<div class="card">
 
-    <!-- FLORES -->
-    <img src="flor1.png" class="flor flor1">
-    <img src="flor2.png" class="flor flor2">
+    <img src="flor1.png" class="flor1">
+    <img src="flor2.png" class="flor2">
 
-    <div class="contenido">
+    <div class="texto">
+        <div class="titulo">Acompáñanos al bautizo de</div>
 
-        <div class="texto">
-            <p>Acompáñanos al bautizo de</p>
+        <div class="nombre">Thon Oliver</div>
 
-            <h1>Ihon Oliver</h1>
+        <div class="fecha">25 · Abril</div>
 
-            <h3>25 · Abril</h3>
-
-            <p>
-                Hoy el agua no limpia, solo anuncia. Que tu vida empieza a florecer rodeada de brazos que te cuidan,
-                de miradas que te aman y de caminos que esperan tus pasos.
-            </p>
-
-            <p>
-                Que este día sea el primer recuerdo de una historia llena de luz.
-            </p>
-
-            <a class="btn">CONFIRMAR ASISTENCIA</a>
+        <div class="mensaje">
+            Hoy el agua no limpia, solo anuncia. Que tu vida empieza a florecer rodeada de brazos que te cuidan, de miradas que te aman y de caminos que esperan tus pasos. Que este día sea el primer recuerdo de una historia llena de luz.
         </div>
 
-        <div class="foto">
-            <img src="foto.jpg">
-        </div>
-
+        <a class="boton" href="invitacion.html">CONFIRMAR ASISTENCIA</a>
     </div>
+
+    <!-- 👇 AQUI VA TU FOTO NUEVA -->
+    <img src="bebe.jpg" class="foto">
 
 </div>
 
-<!-- SCRIPT -->
 <script>
 function entrar(){
     document.getElementById("inicio").style.display="none";
-    document.getElementById("invitacion").style.display="block";
-
     var audio = document.getElementById("musica");
     audio.play();
 }
