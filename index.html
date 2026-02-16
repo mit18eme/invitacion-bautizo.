@@ -29,9 +29,7 @@ body{
 }
 
 /* AUDIO */
-audio{
-  display:none;
-}
+audio{ display:none; }
 
 /* HERO */
 .hero{
@@ -66,15 +64,8 @@ audio{
   z-index:1;
 }
 
-.flower.top{
-  top:-80px;
-  right:-80px;
-}
-
-.flower.bottom{
-  bottom:-80px;
-  left:-80px;
-}
+.flower.top{ top:-80px; right:-80px; }
+.flower.bottom{ bottom:-80px; left:-80px; }
 
 /* TEXTO */
 .subtitle{
@@ -101,9 +92,7 @@ p{
 }
 
 /* BOTON */
-.buttons{
-  margin-top:30px;
-}
+.buttons{ margin-top:30px; }
 
 .btn{
   display:inline-block;
@@ -116,9 +105,7 @@ p{
   transition:.3s;
 }
 
-.btn:hover{
-  opacity:.85;
-}
+.btn:hover{ opacity:.85; }
 
 /* FOTO */
 .image{
@@ -152,9 +139,7 @@ p{
     text-align:center;
   }
 
-  .name{
-    font-size:50px;
-  }
+  .name{ font-size:50px; }
 
   .photo{
     width:260px;
@@ -166,22 +151,15 @@ p{
     opacity:.9;
   }
 
-  .flower.top{
-    top:-50px;
-    right:-50px;
-  }
-
-  .flower.bottom{
-    bottom:-50px;
-    left:-50px;
-  }
+  .flower.top{ top:-50px; right:-50px; }
+  .flower.bottom{ bottom:-50px; left:-50px; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- MUSICA -->
+<!-- 🎶 MUSICA -->
 <audio id="musica" loop>
   <source src="musica.mp3" type="audio/mpeg">
 </audio>
@@ -190,20 +168,24 @@ p{
 const audio = document.getElementById("musica");
 
 window.addEventListener("load", () => {
-  audio.play().catch(() => {
-    document.body.addEventListener("click", () => {
-      audio.play();
-    }, { once:true });
-  });
+  const playPromise = audio.play();
+
+  if (playPromise !== undefined) {
+    playPromise.catch(() => {
+      document.body.addEventListener("click", () => {
+        audio.play();
+      }, { once:true });
+    });
+  }
 });
 </script>
 
 <section class="hero">
   <div class="card">
 
-    <!-- FLORES -->
-    <img class="flower top" src="flor1.png">
-    <img class="flower bottom" src="flor2.png">
+    <!-- 🌸 FLORES -->
+    <img class="flower top" src="https://i.imgur.com/4M7IWwP.png">
+    <img class="flower bottom" src="https://i.imgur.com/YZ6FZJm.png">
 
     <!-- TEXTO -->
     <div>
@@ -231,7 +213,7 @@ window.addEventListener("load", () => {
       </div>
     </div>
 
-    <!-- FOTO -->
+    <!-- 🖼 FOTO -->
     <div class="image">
       <div class="photo">
         <img src="bebe.jpg" alt="Bebé Jhon Oliver">
