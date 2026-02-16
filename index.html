@@ -3,171 +3,93 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Invitación Bautizo</title>
+
+<title>Bautizo</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Montserrat&display=swap" rel="stylesheet">
 
 <style>
 body{
   margin:0;
-  font-family:'Segoe UI', sans-serif;
-  background:#f6f8f5;
-  text-align:center;
-  overflow-x:hidden;
+  font-family:'Montserrat', sans-serif;
+  background:#eef1ea;
 }
 
 /* INTRO */
 #intro{
-  position:fixed;
-  width:100%;
   height:100vh;
-  background:#eaf3e6;
   display:flex;
+  flex-direction:column;
   justify-content:center;
   align-items:center;
-  flex-direction:column;
-  z-index:999;
+  text-align:center;
+  background:#e5ecdf;
 }
 
-/* BOTON */
-.btn-entrar{
-  background:#7aa874;
-  color:white;
+#intro h1{
+  color:#6f8f6b;
+  font-size:28px;
+  margin-bottom:30px;
+}
+
+#btnEntrar{
+  background:#7da77a;
   border:none;
-  padding:15px 30px;
+  color:white;
+  padding:15px 35px;
+  border-radius:40px;
   font-size:18px;
-  border-radius:30px;
   cursor:pointer;
-  margin-top:20px;
 }
 
-/* CONTENIDO OCULTO AL INICIO */
+/* INVITACION */
 #invitacion{
   display:none;
-  position:relative;
-  padding:40px 20px;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+  padding:20px;
 }
 
-/* FLORES */
-.flower{
-  position:absolute;
-  width:220px;
-  opacity:0.9;
-  z-index:1;
-}
-
-.flower.top{
-  top:-40px;
-  right:-40px;
-}
-
-.flower.bottom{
-  bottom:-40px;
-  left:-40px;
-}
-
-/* TARJETA */
 .card{
   background:white;
   border-radius:20px;
-  padding:25px;
-  max-width:420px;
-  margin:auto;
-  box-shadow:0 10px 25px rgba(0,0,0,0.1);
-  position:relative;
-  z-index:2;
-}
-
-/* FOTO */
-.foto-bebe{
+  padding:30px;
+  max-width:900px;
   width:100%;
-  border-radius:15px;
-  margin-bottom:15px;
-  object-fit:cover;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
 }
 
-/* TEXTOS */
-h1{
-  color:#6c8f6b;
+.texto{
+  max-width:420px;
 }
 
-p{
-  color:#555;
-  font-size:16px;
+.texto h2{
+  color:#6f8f6b;
+  font-size:20px;
+}
+
+.nombre{
+  font-family:'Playfair Display', serif;
+  font-size:42px;
+  color:#7da77a;
+}
+
+.fecha{
+  margin:10px 0;
+  letter-spacing:3px;
+}
+
+.poema{
+  margin-top:20px;
   line-height:1.6;
+  color:#444;
 }
-</style>
-</head>
 
-<body>
-
-<!-- AUDIO -->
-<audio id="musica" preload="auto" loop>
-  <source src="musica.mp3" type="audio/mpeg">
-</audio>
-
-<!-- INTRO -->
-<div id="intro">
-  <h1>Te invito a un momento muy especial 💚</h1>
-  <button id="btnEntrar" class="btn-entrar">Ver invitación</button>
-</div>
-
-<!-- INVITACION -->
-<div id="invitacion">
-
-  <!-- FLORES -->
-  <img src="flor1.png" class="flower top">
-  <img src="flor2.png" class="flower bottom">
-
-  <div class="card">
-
-    <img src="bebe.jpg" class="foto-bebe">
-
-    <h1>Mi Bautizo</h1>
-
-    <p>
-    Hoy el agua no limpia,<br>
-    solo anuncia.<br><br>
-
-    Que tu vida empieza a florecer<br>
-    rodeada de brazos que te cuidan,<br>
-    de miradas que te aman,<br>
-    y de caminos que esperan tus pasos.<br><br>
-
-    Que este día sea el primer recuerdo<br>
-    de una historia llena de luz.
-    </p>
-
-    <p><b>Fecha:</b> 25 de abril</p>
-    <p><b>Hora:</b> 4:00 PM</p>
-    <p><b>Lugar:</b> Mi casa 🏡</p>
-
-    <p>Con amor te esperamos 💚</p>
-
-  </div>
-
-</div>
-
-<!-- SCRIPT -->
-<script>
-const btn = document.getElementById("btnEntrar");
-const intro = document.getElementById("intro");
-const invitacion = document.getElementById("invitacion");
-const audio = document.getElementById("musica");
-
-btn.addEventListener("click", function(){
-
-  // ocultar intro
-  intro.style.display = "none";
-
-  // mostrar invitacion
-  invitacion.style.display = "block";
-
-  // reproducir musica
-  audio.play().catch(e => {
-    console.log("El navegador bloqueó el audio:", e);
-  });
-
-});
-</script>
-
-</body>
-</html>
+.boton{
+  margin-top:25px;
+  display:inline-block;
