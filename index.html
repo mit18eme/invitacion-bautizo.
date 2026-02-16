@@ -1,150 +1,148 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Invitación Bautizo</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Libre+Baskerville&display=swap" rel="stylesheet">
+<title>Invitación Bautizo</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Libre Baskerville', serif;
-      background-color: #f6efe6; /* cremita bonito */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Pinyon+Script&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+    margin:0;
+    padding:0;
+    background:#efe9e4; /* cremita bonito */
+    font-family:'Playfair Display', serif;
+}
+
+/* TARJETA PRINCIPAL */
+.card{
+    max-width:1000px;
+    margin:60px auto;
+    background:#f6f2ee;
+    border-radius:25px;
+    padding:50px;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:40px;
+    overflow:hidden;
+}
+
+/* TEXTO */
+.texto{
+    width:55%;
+    color:#5f6f64;
+}
+
+.titulo{
+    font-size:20px;
+    margin-bottom:10px;
+}
+
+.nombre{
+    font-family:'Pinyon Script', cursive;
+    font-size:70px;
+    color:#7da48f;
+    margin:10px 0;
+}
+
+.fecha{
+    letter-spacing:3px;
+    margin-bottom:20px;
+}
+
+.mensaje{
+    line-height:1.7;
+    font-size:17px;
+}
+
+/* BOTON */
+.boton{
+    margin-top:30px;
+    display:inline-block;
+    padding:15px 35px;
+    background:#7da48f;
+    color:white;
+    border-radius:30px;
+    text-decoration:none;
+    font-size:15px;
+}
+
+/* FOTO */
+.foto{
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    object-fit:cover;
+    border:12px solid #dfe7e2;
+}
+
+/* FLORES */
+.flor1{
+    position:absolute;
+    top:0;
+    right:0;
+    width:130px;
+}
+
+.flor2{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:130px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .card{
+        flex-direction:column;
+        text-align:center;
     }
 
-    .card {
-      background: #fbf7f2;
-      width: 90%;
-      max-width: 1000px;
-      border-radius: 30px;
-      padding: 40px;
-      position: relative;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
+    .texto{
+        width:100%;
     }
 
-    .text {
-      width: 55%;
+    .foto{
+        width:220px;
+        height:220px;
     }
+}
 
-    h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 60px;
-      margin: 10px 0;
-      color: #7da489; /* verde suave */
-    }
-
-    .fecha {
-      margin: 15px 0;
-      color: #7b6f63;
-    }
-
-    p {
-      color: #6d6257;
-      line-height: 1.6;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      background: #8faa96;
-      color: white;
-      padding: 15px 30px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    .foto {
-      width: 280px;
-      height: 280px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 8px solid #dfe7df;
-      flex-shrink: 0;
-    }
-
-    .foto img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* FLORES */
-    .flor1 {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 120px;
-    }
-
-    .flor2 {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 120px;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .card {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .text {
-        width: 100%;
-      }
-
-      .foto {
-        width: 220px;
-        height: 220px;
-      }
-
-      h1 {
-        font-size: 45px;
-      }
-    }
-
-  </style>
+</style>
 </head>
 
 <body>
 
-  <div class="card">
+<div class="card">
 
-    <!-- Flores -->
+    <!-- flor superior derecha -->
     <img src="flor1.png" class="flor1">
+
+    <!-- flor inferior izquierda -->
     <img src="flor2.png" class="flor2">
 
-    <div class="text">
-      <p>Acompáñanos al bautizo de</p>
-      <h1>Ihon Oliver</h1>
+    <div class="texto">
+        <div class="titulo">Acompáñanos al bautizo de</div>
 
-      <div class="fecha">25 · Abril</div>
+        <div class="nombre">Thon Oliver</div>
 
-      <p>
-        Hoy el agua no limpia, solo anuncia. Que tu vida empieza a florecer rodeada de brazos que te cuidan, de miradas que te aman y de caminos que esperan tus pasos. Que este día sea el primer recuerdo de una historia llena de luz.
-      </p>
+        <div class="fecha">25 · Abril</div>
 
-      <a href="#" class="btn">CONFIRMAR ASISTENCIA</a>
+        <div class="mensaje">
+            Hoy el agua no limpia, solo anuncia. Que tu vida empieza a florecer rodeada de brazos que te cuidan, de miradas que te aman y de caminos que esperan tus pasos. Que este día sea el primer recuerdo de una historia llena de luz.
+        </div>
+
+        <a class="boton" href="invitacion.html">CONFIRMAR ASISTENCIA</a>
     </div>
 
-    <div class="foto">
-      <img src="foto.jpg" alt="bebé">
-    </div>
+    <img src="foto.jpg" class="foto">
 
-  </div>
+</div>
 
 </body>
 </html>
