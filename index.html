@@ -24,9 +24,10 @@ body{
   justify-content:center;
   align-items:center;
   flex-direction:column;
-  z-index:10;
+  z-index:999;
 }
 
+/* BOTON */
 .btn-entrar{
   background:#7aa874;
   color:white;
@@ -38,8 +39,9 @@ body{
   margin-top:20px;
 }
 
-/* INVITACION */
-.contenido{
+/* CONTENIDO OCULTO AL INICIO */
+#invitacion{
+  display:none;
   position:relative;
   padding:40px 20px;
 }
@@ -47,19 +49,19 @@ body{
 /* FLORES */
 .flower{
   position:absolute;
-  width:260px;
-  z-index:0;
-  opacity:0.95;
+  width:220px;
+  opacity:0.9;
+  z-index:1;
 }
 
 .flower.top{
-  top:-60px;
-  right:-60px;
+  top:-40px;
+  right:-40px;
 }
 
 .flower.bottom{
-  bottom:-60px;
-  left:-60px;
+  bottom:-40px;
+  left:-40px;
 }
 
 /* TARJETA */
@@ -79,9 +81,10 @@ body{
   width:100%;
   border-radius:15px;
   margin-bottom:15px;
+  object-fit:cover;
 }
 
-/* TITULOS */
+/* TEXTOS */
 h1{
   color:#6c8f6b;
 }
@@ -89,34 +92,33 @@ h1{
 p{
   color:#555;
   font-size:16px;
+  line-height:1.6;
 }
 </style>
 </head>
 
 <body>
 
-<!-- 🔊 AUDIO -->
-<audio id="musica" loop>
+<!-- AUDIO -->
+<audio id="musica" preload="auto" loop>
   <source src="musica.mp3" type="audio/mpeg">
 </audio>
 
-<!-- 🌿 INTRO -->
+<!-- INTRO -->
 <div id="intro">
   <h1>Te invito a un momento muy especial 💚</h1>
-  <button onclick="entrarInvitacion()" class="btn-entrar">
-    Ver invitación
-  </button>
+  <button id="btnEntrar" class="btn-entrar">Ver invitación</button>
 </div>
 
-<!-- 💌 INVITACION -->
-<div class="contenido">
+<!-- INVITACION -->
+<div id="invitacion">
 
   <!-- FLORES -->
   <img src="flor1.png" class="flower top">
   <img src="flor2.png" class="flower bottom">
 
-  <!-- TARJETA -->
   <div class="card">
+
     <img src="bebe.jpg" class="foto-bebe">
 
     <h1>Mi Bautizo</h1>
@@ -134,18 +136,38 @@ p{
     de una historia llena de luz.
     </p>
 
-    <p><b>Fecha:</b> 10 de Marzo</p>
+    <p><b>Fecha:</b> 25 de abril</p>
     <p><b>Hora:</b> 4:00 PM</p>
     <p><b>Lugar:</b> Mi casa 🏡</p>
 
     <p>Con amor te esperamos 💚</p>
+
   </div>
 
 </div>
 
-<!-- 🎶 SCRIPT -->
+<!-- SCRIPT -->
 <script>
-function entrarInvitacion(){
+const btn = document.getElementById("btnEntrar");
+const intro = document.getElementById("intro");
+const invitacion = document.getElementById("invitacion");
+const audio = document.getElementById("musica");
+
+btn.addEventListener("click", function(){
 
   // ocultar intro
-  document.getElementById("intro").style.display = "
+  intro.style.display = "none";
+
+  // mostrar invitacion
+  invitacion.style.display = "block";
+
+  // reproducir musica
+  audio.play().catch(e => {
+    console.log("El navegador bloqueó el audio:", e);
+  });
+
+});
+</script>
+
+</body>
+</html>
