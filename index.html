@@ -1,201 +1,150 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Bautizo de Jhon Oliver</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitación Bautizo</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Great+Vibes&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Libre+Baskerville&display=swap" rel="stylesheet">
 
-<style>
-*{box-sizing:border-box}
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Libre Baskerville', serif;
+      background-color: #f6efe6; /* cremita bonito */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
 
-body{
-  margin:0;
-  font-family:'Montserrat',sans-serif;
-  background:#f3efe8;
-  color:#6b5f52;
-  overflow-x:hidden;
-}
+    .card {
+      background: #fbf7f2;
+      width: 90%;
+      max-width: 1000px;
+      border-radius: 30px;
+      padding: 40px;
+      position: relative;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
 
-/* HERO */
-.hero{
-  min-height:100vh;
-  background:url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:30px;
-}
+    .text {
+      width: 55%;
+    }
 
-/* TARJETA */
-.card{
-  max-width:1200px;
-  width:100%;
-  background:#fbf9f6;
-  border-radius:22px;
-  box-shadow:0 30px 70px rgba(0,0,0,.18);
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  padding:70px;
-  gap:50px;
-  position:relative;
-  overflow:hidden;
-}
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 60px;
+      margin: 10px 0;
+      color: #7da489; /* verde suave */
+    }
 
-/* FLORES */
-.flower{
-  position:absolute;
-  width:160px;
-  opacity:.9;
-  pointer-events:none;
-}
+    .fecha {
+      margin: 15px 0;
+      color: #7b6f63;
+    }
 
-.flower.top{
-  top:0;
-  right:0;
-  transform: translate(35%,-35%);
-}
+    p {
+      color: #6d6257;
+      line-height: 1.6;
+    }
 
-.flower.bottom{
-  bottom:0;
-  left:0;
-  transform: translate(-35%,35%);
-}
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      background: #8faa96;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 14px;
+    }
 
-/* TEXTO */
-.subtitle{
-  font-size:18px;
-}
+    .foto {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 8px solid #dfe7df;
+      flex-shrink: 0;
+    }
 
-.name{
-  font-family:'Great Vibes',cursive;
-  font-size:76px;
-  color:#8a7660;
-  margin:10px 0;
-}
+    .foto img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-.date{
-  font-family:'Playfair Display',serif;
-  letter-spacing:3px;
-  margin-bottom:30px;
-}
+    /* FLORES */
+    .flor1 {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 120px;
+    }
 
-p{
-  line-height:1.8;
-  max-width:420px;
-}
+    .flor2 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 120px;
+    }
 
-/* BOTON */
-.btn{
-  display:inline-block;
-  padding:15px 36px;
-  border-radius:30px;
-  text-decoration:none;
-  font-size:14px;
-  border:1px solid #8a7660;
-  background:#8a7660;
-  color:#fff;
-  margin-top:20px;
-}
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .card {
+        flex-direction: column;
+        text-align: center;
+      }
 
-/* IMAGEN */
-.image{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-.photo{
-  width:380px;
-  height:380px;
-  border-radius:50%;
-  overflow:hidden;
-  border:12px solid #f1eadf;
-  box-shadow:0 15px 35px rgba(0,0,0,.25);
-}
-.photo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
+      .text {
+        width: 100%;
+      }
 
-/* RESPONSIVE */
-@media(max-width:900px){
-  .card{
-    grid-template-columns:1fr;
-    padding:50px 25px;
-    text-align:center;
-  }
+      .foto {
+        width: 220px;
+        height: 220px;
+      }
 
-  .photo{
-    width:260px;
-    height:260px;
-  }
+      h1 {
+        font-size: 45px;
+      }
+    }
 
-  .flower{
-    width:110px;
-  }
-
-  .flower.top{
-    transform: translate(40%,-40%);
-  }
-
-  .flower.bottom{
-    transform: translate(-40%,40%);
-  }
-}
-</style>
+  </style>
 </head>
 
 <body>
 
-<!-- AUDIO -->
-<audio id="musica">
-  <source src="musica.mp3" type="audio/mp3">
-</audio>
-
-<section class="hero">
   <div class="card">
 
-    <!-- FLORES -->
-    <img class="flower top" src="flor1.png">
-    <img class="flower bottom" src="flor2.png">
+    <!-- Flores -->
+    <img src="flor1.png" class="flor1">
+    <img src="flor2.png" class="flor2">
 
-    <!-- TEXTO -->
-    <div>
-      <div class="subtitle">Acompáñanos al bautizo de</div>
-      <div class="name">Jhon Oliver</div>
-      <div class="date">25 · ABRIL</div>
+    <div class="text">
+      <p>Acompáñanos al bautizo de</p>
+      <h1>Ihon Oliver</h1>
+
+      <div class="fecha">25 · Abril</div>
 
       <p>
-        Hoy el agua no limpia, solo anuncia.
-        Que tu vida empieza a florecer rodeada de brazos que te cuidan,
-        de miradas que te aman y de caminos que esperan tus pasos.
-        Que este día sea el primer recuerdo de una historia llena de luz.
+        Hoy el agua no limpia, solo anuncia. Que tu vida empieza a florecer rodeada de brazos que te cuidan, de miradas que te aman y de caminos que esperan tus pasos. Que este día sea el primer recuerdo de una historia llena de luz.
       </p>
 
-      <a class="btn"
-         href="https://wa.me/5583190406?text=Confirmo%20mi%20asistencia%20al%20bautizo%20de%20Jhon%20Oliver"
-         target="_blank">
-         CONFIRMAR ASISTENCIA
-      </a>
+      <a href="#" class="btn">CONFIRMAR ASISTENCIA</a>
     </div>
 
-    <!-- FOTO -->
-    <div class="image">
-      <div class="photo">
-        <img src="bebe.jpg">
-      </div>
+    <div class="foto">
+      <img src="foto.jpg" alt="bebé">
     </div>
 
   </div>
-</section>
-
-<script>
-document.body.addEventListener("click", function(){
-  document.getElementById("musica").play();
-}, {once:true});
-</script>
 
 </body>
 </html>
