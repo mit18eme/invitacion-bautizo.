@@ -1,234 +1,67 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitación Bautizo</title>
 
-<title>Bautizo de Jhon Oliver</title>
+  <!-- TIPOGRAFÍA -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Montserrat&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Great+Vibes&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: #fdfaf6;
+      overflow-x: hidden;
+    }
 
-<style>
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
 
-:root{
-  --verde:#9bb7a5;
-  --verde-claro:#e6efe9;
-  --cafe:#8a7660;
-  --fondo:#fbf9f6;
-}
+    /* PANTALLA DE ENTRADA */
+    #intro {
+      height: 100vh;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(6px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 30px;
+      position: fixed;
+      width: 100%;
+      z-index: 999;
+    }
 
-*{box-sizing:border-box;margin:0;padding:0}
+    #intro h1 {
+      font-size: 28px;
+      color: #8c6f5a;
+      margin-bottom: 20px;
+    }
 
-body{
-  font-family:'Montserrat',sans-serif;
-  background:#f3efe8;
-  color:#6b5f52;
-}
+    #enterBtn {
+      background: #d6bfa9;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      color: white;
+    }
 
-/* INTRO */
-#intro{
-  position:fixed;
-  width:100%;
-  height:100vh;
-  background:var(--verde-claro);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-direction:column;
-  text-align:center;
-  z-index:10;
-}
+    /* INVITACIÓN */
+    #invitacion {
+      display: none;
+      padding: 40px 20px;
+      text-align: center;
+      position: relative;
+    }
 
-#intro h1{
-  font-size:28px;
-  margin-bottom:30px;
-}
-
-#btnEntrar{
-  background:var(--verde);
-  color:#fff;
-  border:none;
-  padding:15px 35px;
-  border-radius:30px;
-  font-size:16px;
-  cursor:pointer;
-}
-
-/* INVITACION */
-.hero{
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:20px;
-}
-
-.card{
-  max-width:1100px;
-  width:100%;
-  background:var(--fondo);
-  border-radius:24px;
-  box-shadow:0 30px 70px rgba(0,0,0,.18);
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
-  padding:60px;
-  position:relative;
-  overflow:hidden;
-}
-
-/* FLORES */
-.flower{
-  position:absolute;
-  width:220px;
-  opacity:.9;
-  z-index:0;
-}
-
-.flower.top{
-  top:-60px;
-  right:-60px;
-}
-
-.flower.bottom{
-  bottom:-60px;
-  left:-60px;
-}
-
-/* TEXTO */
-.subtitle{font-size:18px}
-.name{
-  font-family:'Great Vibes',cursive;
-  font-size:70px;
-  color:var(--verde);
-  margin:10px 0;
-}
-.date{
-  font-family:'Playfair Display',serif;
-  letter-spacing:3px;
-  margin-bottom:20px;
-}
-p{
-  line-height:1.8;
-  max-width:420px;
-}
-
-.btn{
-  display:inline-block;
-  margin-top:30px;
-  padding:15px 35px;
-  border-radius:30px;
-  background:var(--verde);
-  color:#fff;
-  text-decoration:none;
-}
-
-/* FOTO */
-.photo{
-  width:360px;
-  height:360px;
-  border-radius:50%;
-  overflow:hidden;
-  border:12px solid var(--verde-claro);
-  margin:auto;
-}
-.photo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-/* RESPONSIVE */
-@media(max-width:900px){
-  .card{
-    grid-template-columns:1fr;
-    padding:40px 20px;
-    text-align:center;
-  }
-
-  .name{font-size:55px}
-
-  .photo{
-    width:260px;
-    height:260px;
-  }
-
-  .flower{
-    width:150px;
-  }
-}
-
-</style>
-</head>
-
-<body>
-
-<!-- MUSICA -->
-<audio id="musica" src="musica.mp3" preload="none"></audio>
-
-<!-- INTRO -->
-<section id="intro">
-  <h1>Te invito a un momento muy especial 💚</h1>
-  <button id="btnEntrar">Ver invitación</button>
-</section>
-
-<!-- INVITACION -->
-<section class="hero" id="invitacion" style="display:none">
-
-  <div class="card">
-
-    <!-- FLORES -->
-    <img src="flor1.png" class="flower top">
-    <img src="flor2.png" class="flower bottom">
-
-    <!-- TEXTO -->
-    <div>
-      <div class="subtitle">Acompáñanos al bautizo de</div>
-      <div class="name">Jhon Oliver</div>
-      <div class="date">25 · ABRIL</div>
-
-      <p>
-        Hoy el agua no limpia,<br>
-        solo anuncia.<br>
-        Que tu vida empieza a florecer<br>
-        rodeada de brazos que te cuidan,<br>
-        de miradas que te aman,<br>
-        y de caminos que esperan tus pasos.<br><br>
-
-        Que este día sea el primer recuerdo<br>
-        de una historia llena de luz.
-      </p>
-
-      <a class="btn" href="https://wa.me/525583190406">CONFIRMAR ASISTENCIA</a>
-    </div>
-
-    <!-- FOTO -->
-    <div class="photo">
-      <img src="bebe.jpg" loading="lazy">
-    </div>
-
-  </div>
-
-</section>
-
-<script>
-
-const btn = document.getElementById("btnEntrar");
-const intro = document.getElementById("intro");
-const invitacion = document.getElementById("invitacion");
-const musica = document.getElementById("musica");
-
-btn.addEventListener("click", function(){
-
-  intro.style.display = "none";
-  invitacion.style.display = "flex";
-
-  musica.currentTime = 0;
-  musica.play().catch(()=>{});
-
-});
-
-</script>
-
-</body>
-</html>
+    .card {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      border-radi
