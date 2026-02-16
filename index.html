@@ -13,11 +13,33 @@
 body{
     margin:0;
     padding:0;
-    background:#efe9e4; /* cremita bonito */
+    background:#efe9e4;
     font-family:'Playfair Display', serif;
 }
 
-/* TARJETA PRINCIPAL */
+/* ===== PANTALLA INICIAL ===== */
+#inicio{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:#efe9e4;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    z-index:9999;
+}
+
+#inicio button{
+    padding:18px 40px;
+    border:none;
+    border-radius:30px;
+    background:#7da48f;
+    color:white;
+    font-size:18px;
+}
+
+/* TARJETA */
 .card{
     max-width:1000px;
     margin:60px auto;
@@ -118,12 +140,18 @@ body{
 
 <body>
 
+<!-- ===== MUSICA ===== -->
+<audio id="musica" src="musica.mp3" loop></audio>
+
+<!-- ===== PANTALLA INICIAL ===== -->
+<div id="inicio">
+    <button onclick="entrar()">Entrar a la invitación</button>
+</div>
+
+<!-- ===== INVITACION ===== -->
 <div class="card">
 
-    <!-- flor superior derecha -->
     <img src="flor1.png" class="flor1">
-
-    <!-- flor inferior izquierda -->
     <img src="flor2.png" class="flor2">
 
     <div class="texto">
@@ -140,9 +168,18 @@ body{
         <a class="boton" href="invitacion.html">CONFIRMAR ASISTENCIA</a>
     </div>
 
-    <img src="foto.jpg" class="foto">
+    <!-- 👇 AQUI VA TU FOTO NUEVA -->
+    <img src="bebe.jpg" class="foto">
 
 </div>
+
+<script>
+function entrar(){
+    document.getElementById("inicio").style.display="none";
+    var audio = document.getElementById("musica");
+    audio.play();
+}
+</script>
 
 </body>
 </html>
