@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invitación Bautizo</title>
 
-    <!-- FUENTES -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
 
     <style>
@@ -188,20 +187,25 @@
                 Que este día sea el primer recuerdo de una historia llena de luz.
             </p>
 
-            <a class="btn" onclick="mostrarOpciones()">VER UBICACIÓN 📍</a>
+            <!-- BOTÓN DIRECCIÓN -->
+            <a class="btn" onclick="mostrarBotones()">VER UBICACIÓN 📍</a>
 
-            <div id="opciones" style="display:none;">
-                <a class="btn" 
-                   href="https://www.google.com/maps?q=Jardin+Para+Eventos+El+Sol,+Del+Sol+31,+San+Cristobal+Centro,+Ecatepec+de+Morelos,+MEX" 
-                   target="_blank">
-                   ABRIR EN GOOGLE MAPS
+            <!-- BOTONES OCULTOS -->
+            <div id="extra" style="display:none; margin-top:20px;">
+
+                <a href="https://www.google.com/maps?q=Jardin+Para+Eventos+El+Sol,+Del+Sol+31,+San+Cristobal+Centro,+Ecatepec+de+Morelos,+MEX"
+                target="_blank"
+                class="btn"
+                style="display:block; margin-bottom:15px;">
+                ABRIR EN GOOGLE MAPS
                 </a>
 
-                <a class="btn" 
-                   href="https://wa.me/5583190406?text=Confirmo%20mi%20asistencia%20al%20bautizo%20de%20Ihon%20Oliver" 
-                   target="_blank">
-                   CONFIRMO ASISTENCIA 💌
+                <a href="https://wa.me/5583190406?text=Confirmo%20mi%20asistencia%20al%20bautizo%20de%20Ihon%20Oliver"
+                target="_blank"
+                class="btn">
+                CONFIRMO ASISTENCIA 💌
                 </a>
+
             </div>
 
         </div>
@@ -221,8 +225,8 @@ function entrar(){
     document.getElementById("musica").play();
 }
 
-function mostrarOpciones(){
-    document.getElementById("opciones").style.display="block";
+function mostrarBotones(){
+    document.getElementById("extra").style.display="block";
 }
 </script>
 
