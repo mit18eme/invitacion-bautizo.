@@ -56,7 +56,7 @@ body{
     padding:50px;
     position:relative;
     box-shadow:0 5px 20px rgba(0,0,0,0.05);
-    overflow:hidden; /* mantiene flores dentro */
+    overflow:hidden;
 }
 
 .contenido{
@@ -124,7 +124,7 @@ body{
     transition:opacity 0.4s ease, transform 0.4s ease;
 }
 
-/* -------- FLORES -------- */
+/* -------- FLORES (ajustadas para verse dentro del marco) -------- */
 .flor{
     position:absolute;
     width:110px;
@@ -132,13 +132,13 @@ body{
 }
 
 .flor1{
-    top:-20px;
-    right:-20px;
+    top:0px;
+    right:0px;
 }
 
 .flor2{
-    bottom:-20px;
-    left:-20px;
+    bottom:0px;
+    left:0px;
 }
 
 /* -------- RESPONSIVO -------- */
@@ -203,10 +203,8 @@ body{
                 Que este día sea el primer recuerdo de una historia llena de luz.
             </p>
 
-            <!-- BOTÓN UBICACIÓN -->
             <a class="btn" id="btnUbicacion" onclick="mostrarBotones()">VER UBICACIÓN 📍</a>
 
-            <!-- MAPA ANIMADO -->
             <div id="mapaContainer">
 
                 <iframe 
@@ -217,10 +215,17 @@ body{
                 loading="lazy">
                 </iframe>
 
+                <div style="margin-top:18px; color:#7c746c; line-height:1.6;">
+                    <strong style="color:#7fa38f;">📍 Dirección:</strong><br>
+                    Jardín Para Eventos El Sol<br>
+                    Del Sol 31, San Cristóbal Centro<br>
+                    Ecatepec de Morelos, Estado de México
+                </div>
+
                 <a href="https://wa.me/5583190406?text=Confirmo%20mi%20asistencia%20al%20bautizo%20de%20Ihon%20Oliver"
                 target="_blank"
                 class="btn"
-                style="margin-top:15px;">
+                style="margin-top:20px;">
                 CONFIRMO ASISTENCIA 💌
                 </a>
 
@@ -247,7 +252,7 @@ function mostrarBotones(){
     var mapa = document.getElementById("mapaContainer");
     var boton = document.getElementById("btnUbicacion");
 
-    mapa.style.maxHeight = "500px";
+    mapa.style.maxHeight = "600px";
 
     boton.style.opacity = "0";
     boton.style.transform = "scale(0.9)";
