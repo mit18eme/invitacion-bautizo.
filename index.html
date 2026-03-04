@@ -12,10 +12,11 @@
         body{
             margin:0;
             padding:0;
-            background:#f6f1ea;
+            background:#f6f1ea; /* cremita bonito */
             font-family: 'Playfair Display', serif;
         }
 
+        /* -------- PANTALLA INICIAL -------- */
         #inicio{
             position:fixed;
             top:0;
@@ -47,6 +48,7 @@
             cursor:pointer;
         }
 
+        /* -------- TARJETA -------- */
         .card{
             max-width:1100px;
             margin:80px auto;
@@ -108,8 +110,8 @@
             padding:14px 30px;
             border-radius:30px;
             text-decoration:none;
-            cursor:pointer;
         }
+
         /* -------- FLORES -------- */
         .flor{
             position:absolute;
@@ -152,62 +154,26 @@
                 width:80px;
             }
         }
-        }
-
-        /* -------- MAPA ANIMADO -------- */
-        #seccionMapa{
-            max-height:0;
-            overflow:hidden;
-            opacity:0;
-            transition:all 0.6s ease;
-        }
-
-        #seccionMapa.activo{
-            max-height:800px;
-            opacity:1;
-            margin-top:25px;
-        }
-
-        @media(max-width:768px){
-            .contenido{
-                flex-direction:column;
-                text-align:center;
-            }
-
-            .foto{
-                width:230px;
-                height:230px;
-            }
-
-            .texto h1{
-                font-size:45px;
-            }
-
-            .card{
-                padding:30px 20px;
-                margin:40px 15px;
-            }
-
-            .flor{
-                width:80px;
-            }
-        }
     </style>
 </head>
 
 <body>
 
+<!-- 🎵 MUSICA -->
 <audio id="musica" loop>
     <source src="musica.mp3" type="audio/mpeg">
 </audio>
 
+<!-- 🌿 PANTALLA INICIAL -->
 <div id="inicio">
     <h2>Te invito a un momento muy especial para mí 💚</h2>
     <button onclick="entrar()">Entrar a la invitación</button>
 </div>
 
+<!-- 💌 TARJETA -->
 <div class="card" id="invitacion" style="display:none;">
 
+    <!-- FLORES -->
     <img src="flor1.png" class="flor flor1">
     <img src="flor2.png" class="flor flor2">
 
@@ -216,9 +182,9 @@
         <div class="texto">
             <p>Acompáñanos al bautizo de</p>
 
-            <h1>Jhon Oliver</h1>
+            <h1>Ihon Oliver</h1>
 
-            <h3>26 · Abril</h3>
+            <h3>25 · Abril</h3>
 
             <p>
                 Hoy el agua no limpia, solo anuncia. Que tu vida empieza a florecer rodeada de brazos que te cuidan,
@@ -229,36 +195,7 @@
                 Que este día sea el primer recuerdo de una historia llena de luz.
             </p>
 
-            <!-- BOTÓN NUEVO -->
-            <a class="btn" onclick="mostrarMapa()">VER UBICACIÓN 📍</a>
-
-            <!-- MAPA -->
-            <div id="seccionMapa">
-
-                <p style="margin-top:20px;">
-                    Jardín Para Eventos El Sol<br>
-                    Del Sol #31, San Cristóbal Centro,<br>
-                    Ecatepec de Morelos, Méx.
-                </p>
-
-                <iframe
-                src="https://www.google.com/maps?q=Jardin+Para+Eventos+El+Sol,+Del+Sol+31,+San+Cristobal+Centro,+Ecatepec+de+Morelos,+MEX&output=embed"
-                width="100%"
-                height="250"
-                style="border:0;border-radius:15px;margin-top:15px;"
-                allowfullscreen=""
-                loading="lazy">
-                </iframe>
-
-                <a href="https://wa.me/525583190406?text=Confirmo%20mi%20asistencia%20al%20bautizo%20de%20Ihon%20Oliver"
-                target="_blank"
-                class="btn"
-                style="margin-top:20px;">
-                CONFIRMO ASISTENCIA 💌
-                </a>
-
-            </div>
-
+            <a class="btn">CONFIRMAR ASISTENCIA</a>
         </div>
 
         <div class="foto">
@@ -269,15 +206,14 @@
 
 </div>
 
+<!-- SCRIPT -->
 <script>
 function entrar(){
     document.getElementById("inicio").style.display="none";
     document.getElementById("invitacion").style.display="block";
-    document.getElementById("musica").play();
-}
 
-function mostrarMapa(){
-    document.getElementById("seccionMapa").classList.add("activo");
+    var audio = document.getElementById("musica");
+    audio.play();
 }
 </script>
 
