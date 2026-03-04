@@ -1,202 +1,228 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Bautizo de Jhon Oliver</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación Bautizo</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Great+Vibes&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <!-- FUENTES -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
 
-<style>
-:root{
-  --verde:#9bb7a5;
-  --verde-claro:#e6efe9;
-  --fondo:#fbf9f6;
-}
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            background:#f6f1ea;
+            font-family: 'Playfair Display', serif;
+        }
 
-/* RESET */
-*{margin:0;padding:0;box-sizing:border-box;}
+        #inicio{
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height:100vh;
+            background:#f6f1ea;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            z-index:999;
+        }
 
-body{
-  font-family:'Montserrat',sans-serif;
-  background:#f3efe8;
-  color:#6b5f52;
-}
+        #inicio h2{
+            color:#6f8f7e;
+            font-weight:400;
+            margin-bottom:25px;
+            text-align:center;
+        }
 
-/* PANTALLA INICIAL */
-#intro{
-  position:fixed;
-  width:100%;
-  height:100%;
-  background:rgba(255,255,255,0.9);
-  backdrop-filter:blur(8px);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  z-index:9999;
-  cursor:pointer;
-  text-align:center;
-  padding:20px;
-}
+        #inicio button{
+            background:#7fa38f;
+            border:none;
+            padding:15px 35px;
+            border-radius:30px;
+            color:white;
+            font-size:16px;
+            cursor:pointer;
+        }
 
-#intro h1{
-  font-family:'Playfair Display',serif;
-  color:#8a7660;
-  font-size:20px;
-}
+        .card{
+            max-width:1100px;
+            margin:80px auto;
+            background:#fbf8f4;
+            border-radius:30px;
+            padding:50px;
+            position:relative;
+            box-shadow:0 5px 20px rgba(0,0,0,0.05);
+        }
 
-/* HERO */
-.hero{
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:30px;
-}
+        .contenido{
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:40px;
+        }
 
-/* CARD */
-.card{
-  max-width:1200px;
-  width:100%;
-  background:var(--fondo);
-  border-radius:24px;
-  box-shadow:0 30px 70px rgba(0,0,0,.18);
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:50px;
-  padding:70px;
-  position:relative;
-}
+        .texto{
+            max-width:520px;
+        }
 
-/* FLORES */
-.flower{
-  position:absolute;
-  width:260px;
-  z-index:1;
-}
+        .texto h1{
+            font-family:'Great Vibes', cursive;
+            color:#7fa38f;
+            font-size:60px;
+            margin:10px 0;
+        }
 
-.flower.top{
-  top:-80px;
-  right:-80px;
-}
+        .texto h3{
+            color:#8a7f73;
+            font-weight:400;
+            letter-spacing:3px;
+        }
 
-.flower.bottom{
-  bottom:-80px;
-  left:-80px;
-}
+        .texto p{
+            color:#7c746c;
+            line-height:1.8;
+        }
 
-/* TEXTO */
-.subtitle{
-  font-size:18px;
-}
+        .foto{
+            width:300px;
+            height:300px;
+            border-radius:50%;
+            overflow:hidden;
+            border:10px solid #e2ebe5;
+        }
 
-.name{
-  font-family:'Great Vibes',cursive;
-  font-size:76px;
-  color:var(--verde);
-  margin:10px 0;
-}
+        .foto img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+        }
 
-.date{
-  letter-spacing:3px;
-  margin-bottom:30px;
-}
+        .btn{
+            margin-top:25px;
+            display:inline-block;
+            background:#7fa38f;
+            color:white;
+            padding:14px 30px;
+            border-radius:30px;
+            text-decoration:none;
+            cursor:pointer;
+        }
 
-/* BOTON */
-.btn{
-  display:inline-block;
-  margin-top:30px;
-  padding:16px 40px;
-  border-radius:30px;
-  text-decoration:none;
-  background:var(--verde);
-  color:#fff;
-}
+        .flor{
+            position:absolute;
+            width:110px;
+            opacity:0.9;
+        }
 
-/* FOTO */
-.photo{
-  width:380px;
-  height:380px;
-  border-radius:50%;
-  overflow:hidden;
-  border:12px solid var(--verde-claro);
-}
+        .flor1{
+            top:-20px;
+            right:-20px;
+        }
 
-.photo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
+        .flor2{
+            bottom:-20px;
+            left:-20px;
+        }
 
-/* RESPONSIVE */
-@media(max-width:900px){
-  .card{
-    grid-template-columns:1fr;
-    padding:30px;
-    text-align:center;
-  }
-  .photo{
-    width:260px;
-    height:260px;
-  }
-}
-</style>
+        @media(max-width:768px){
+            .contenido{
+                flex-direction:column;
+                text-align:center;
+            }
+
+            .foto{
+                width:230px;
+                height:230px;
+            }
+
+            .texto h1{
+                font-size:45px;
+            }
+
+            .card{
+                padding:30px 20px;
+                margin:40px 15px;
+            }
+
+            .flor{
+                width:80px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- PANTALLA INICIAL -->
-<div id="intro" onclick="iniciarInvitacion()">
-  <h1>Toca para abrir la invitación 💚</h1>
-</div>
-
-<!-- MUSICA -->
 <audio id="musica" loop>
-  <source src="musica.mp3" type="audio/mpeg">
+    <source src="musica.mp3" type="audio/mpeg">
 </audio>
 
-<section class="hero">
-  <div class="card">
+<div id="inicio">
+    <h2>Te invito a un momento muy especial para mí 💚</h2>
+    <button onclick="entrar()">Entrar a la invitación</button>
+</div>
 
-    <!-- FLORES -->
-    <img class="flower top" src="flor1.png">
-    <img class="flower bottom" src="flor2.png">
+<div class="card" id="invitacion" style="display:none;">
 
-    <!-- TEXTO -->
-    <div>
-      <div class="subtitle">Acompáñanos al bautizo de</div>
-      <div class="name">Jhon Oliver</div>
-      <div class="date">25 · ABRIL</div>
+    <img src="flor1.png" class="flor flor1">
+    <img src="flor2.png" class="flor flor2">
 
-      <p>
-        Hoy el agua no limpia, solo anuncia.<br>
-        Que tu vida empieza a florecer<br>
-        rodeada de brazos que te cuidan,<br>
-        de miradas que te aman,<br>
-        y de caminos que esperan tus pasos.<br><br>
+    <div class="contenido">
 
-        Que este día sea el primer recuerdo<br>
-        de una historia llena de luz.
-      </p>
+        <div class="texto">
+            <p>Acompáñanos al bautizo de</p>
 
-      <a class="btn" href="https://wa.me/5583190406?text=Confirmo%20mi%20asistencia%20al%20bautizo%20de%20Jhon%20Oliver">
-        CONFIRMAR ASISTENCIA
-      </a>
+            <h1>Ihon Oliver</h1>
+
+            <h3>25 · Abril</h3>
+
+            <p>
+                Hoy el agua no limpia, solo anuncia. Que tu vida empieza a florecer rodeada de brazos que te cuidan,
+                de miradas que te aman y de caminos que esperan tus pasos.
+            </p>
+
+            <p>
+                Que este día sea el primer recuerdo de una historia llena de luz.
+            </p>
+
+            <a class="btn" onclick="mostrarOpciones()">VER UBICACIÓN 📍</a>
+
+            <div id="opciones" style="display:none;">
+                <a class="btn" 
+                   href="https://www.google.com/maps?q=Jardin+Para+Eventos+El+Sol,+Del+Sol+31,+San+Cristobal+Centro,+Ecatepec+de+Morelos,+MEX" 
+                   target="_blank">
+                   ABRIR EN GOOGLE MAPS
+                </a>
+
+                <a class="btn" 
+                   href="https://wa.me/5583190406?text=Confirmo%20mi%20asistencia%20al%20bautizo%20de%20Ihon%20Oliver" 
+                   target="_blank">
+                   CONFIRMO ASISTENCIA 💌
+                </a>
+            </div>
+
+        </div>
+
+        <div class="foto">
+            <img src="bebe.jpg">
+        </div>
+
     </div>
 
-    <!-- FOTO -->
-    <div class="photo">
-      <img src="bebe.jpg">
-    </div>
-
-  </div>
-</section>
+</div>
 
 <script>
-function iniciarInvitacion(){
-  document.getElementById("intro").style.display="none";
-  var audio = document.getElementById("musica");
-  audio.play();
+function entrar(){
+    document.getElementById("inicio").style.display="none";
+    document.getElementById("invitacion").style.display="block";
+    document.getElementById("musica").play();
+}
+
+function mostrarOpciones(){
+    document.getElementById("opciones").style.display="block";
 }
 </script>
 
